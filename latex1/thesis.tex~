@@ -1,0 +1,107 @@
+\documentclass{article}
+\usepackage[hang,bf,small]{caption}
+\usepackage{hyperref}
+\usepackage[all]{hypcap}
+
+\setlength{\topmargin}{-.5in}
+\setlength{\textheight}{9in}
+\setlength{\oddsidemargin}{.125in}
+\setlength{\textwidth}{6.25in}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{amsmath}
+\usepackage{subcaption}
+\begin{document}
+\raggedright
+
+\section{Magnetar Spindown as a Source of GRB Engine Power}
+In this section we will explore the fundamental physics of magnetar spindown as it relates to both the prompt emission and the afterglow phases of the LGRB light curve. We will first introduce the magnetization parameter \sigma, relevant for our subsequent discussion of the prompt emission energetics and duration. We will then derive the dipole model for magnetars which will be relevant for our discussion of afterglow plateaus. Finally, we will follow Piro and Ott 2011 \cite{Pirol:2011ed} to account for possible fallback accretion onto our magnetar. This
+may affect both prompt emission and afterglow energetics and duration by modifying the magnetization parameter and the magnetar period.
+
+\subsection{Magnetar Dipole Radiation}
+
+We model magnetars similarly to pulsars and assume a magnetic dipole toy model. The dipolar magnetar field is:
+
+\begin{equation} B(\vec{r})=\frac{3\vec{n}(\vec{m}.\vec{n})-\vec{m}}{r^3}, \end{equation}
+where $\vec{m}$ is the magnetic moment and $\vec{n}$ is the unit radial vector.
+
+In analogy with Larmor's formula for electric dipole radiation, a time-dependent magnetic dipole radiates
+
+\begin{equation}
+\frac{dW}{dt} = -\frac{2}{3c^3} *{\ddot{|\vec{m}}_\perp|}^2,
+\end{equation}
+
+where $\vec{m_\perp}$ is the component of $\vec{m}$ perpendicular to rotation axis.
+
+Defining the angle between the rotation axis and the magnetic dipole moment as $\alpha$,
+
+\begin{equation}\vec{m}_\perp = m_o  \sin({\alpha}) e^{-Iwt},\end{equation}
+so $\ddot{\vec{|m|}}_\perp^2 = {m_o}^2 \sin{\alpha}^2 w^4$
+since $m_o = B R^3/2$ for a uniformly magnetized sphere.
+
+It follows that \begin{equation} \label{eq:lumin}\frac{dW}{dt} = -\frac{{B_p}^2 R^6}{6c^3} w^4 \sin^2{\alpha},\end{equation}
+
+If we assume the magnetic dipole is oriented perpendicularly to the rotation axis so $\alpha=\pi/2$, the luminosity is powered by spin-down. We define the magnetar spin period $P= 2\pi/\omega$ and arrive at equation 2 from Lyons 2010:
+
+\begin{equation} L  = 9.62065*10^{48}\, B^2_{p,15} P^{-4}_{-3} R^6_ 6\,\mathrm{erg \,s^{-1}},\end{equation}
+where $B_{p,15} = B_p/10^{15}$, etc.
+
+Next we assume dipole radiation taps the rotational energy of the magnetar, so $\frac{dE_{rot}}{dt} = \frac{dW}{dt}$ where $E_{rot} = 1/2 I w^2$ so $\ddot{E}_{rot} = I \omega \ddot{\omega}$. Define a characteristic dipole spindown time $\tau_{dipole}$ as
+
+$\tau_{\mathrm{dipole}} = - \omega/\ddot{\omega}$
+It follows that
+
+\begin{equation}\tau_{\mathrm{dipole}} = \frac{3c^3 I}{{B_p}^2 R^6 \omega^6},
+\end{equation}
+
+Then, \begin{equation}\tau_{\mathrm{dipole}} = 2051.75\,\, I_{45} B^{-2}_{15,p} P^2_{-3} R_6^{-6}\,\mathrm{s},\end{equation}  which is equation 3 in Lyons 2010.
+
+Lyons assumes $P=P_o$, using initial period instead and neglecting spindown.
+
+\section{Spindown Times and Plateaus} \label{sec:X}
+We seek to disclaim the argument in Lyons 2009 \cite{Lyons:2009ka} that plateau phases and spindown can be explained by the dipole radiation model of a magnetar.
+Following Piro Ott 2011\cite{Piro:2011ed} and neglecting spindown from fallback accretion, we have
+\begin{equation} I \dot{\Omega}=N_{\mathrm{dip}}, \end{equation}
+where $I= .35 M R^2$ and $N_{\mathrm{dip}}= -\mu ^2 \Omega^3/6c^3$.
+We solve for angular velocity as a function of time
+\begin{equation}\label{eq:freq}
+\Omega = \frac{\sqrt{\frac{21}{2}} c^{3/2} \sqrt{M} R}{\sqrt{10 t\mu^2 - 21 c^3 M R^2 y}},
+\end{equation}
+Together with ~\ref{eq:lumin}, we can solve for spindown radiation luminosity as a function of time, arriving at
+
+\begin{equation}
+L_{\mathrm{dip}}=\frac{147 B^2 c^3 M^2 R^{10}}{8(-21 c^3 M R^2 y+ 5/2 B^2 R^6 t)^2},
+\end{equation}
+
+where we have used $\mu= B R^3/2$, the magnetic moment for a uniformly magnetized sphere, and y is a negative value related to initial period $P_o$ by $P_o= 2\pi \sqrt{-2 y}$.
+
+\hspace{4cm}
+
+Note  the interesting result that luminosity may actually decrease with increasing magnetic field at a given time. A stronger field brakes the magnetar, decreasing its spin frequency as seen in \ref{eq:freq}. Since frequency comes in to the inverse 4th power, while the magnetic field comes in only to the 2nd power in ~\ref{eq:lumin}, luminosity may indeed decreases with higher magnetic field.
+\subsecion{Assumptions}
+We correct for anistropic emission using expression 5 of Lyons 2009 \cite{Lyons:2009ka}.
+
+\begin{equation}
+ E_{\mathrm{beam}}= (1-\cos{\theta_b}) E_{\mathrm{iso}},
+ \end{equation}
+ where $\theta_b$ is the beam's opening angle, and we assumed that this does not change with time. Thus the analogous correlation holds for luminosity.
+
+ I have neglected K correction thus far. Lastly, I have assumed $M=1.4 M_{\odot}$, $R=10^6$ cm unless noted otherwise.
+\hspace{3cm}
+
+The assumption of $1.4 M_{\odot}$ for the magnetar mass seems troublesome since the noncanonical model demands magnetar collapse to a black hole to shut off the light curve, but $1.4 M_{\odot}$ is a lower limit on NS mass - we don't expect collapse to a BH. However, the requisite near breakup spin may prevent an intermediate magnetar from forming, allowing immediate NS collapse to BH. Could a similar breakup instability lead to BH collapse for these low mass NS?
+\hspace{2cm}
+
+I have used Ned Wright's Java Cosmology Calculator for Standard Cosmological Model to arrive at luminosity distances.
+
+The figures below are light curves using data from Swift for LGRB 101225A in the .3-10 keV bandpass.
+
+\section{K-correction}
+I K-correct into the X-ray bandpass in the frame of the magnetar as follows. 
+(include note on comoving vs luminosity distance) The spectral indices $\Gamma$
+are available from SWIFT. The spectral index $\beta$ (define eqn) is simply $\Gamma -1$ and the K-corrected luminosity is then:
+
+\begin{equation} L_{[.3-10 keV]} = \frac{ 4\pi\* f_{[.3-10 keV]}}{d_{L}^2}  (1+z)^{-1+\beta}
+\end{equation}
+
+\end{document}
