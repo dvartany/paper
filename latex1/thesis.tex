@@ -12,6 +12,37 @@
 \usepackage{amsmath}
 \usepackage{subcaption}
 \begin{document}
+\thispagestyle{empty}
+
+\begin{center}
+\Huge
+\vspace*{7 cm}
+{\bf Title}\\
+\vspace{5 cm}
+\large
+David Vartanyan\\
+Advisor: Dr. Christian Ott\\
+Date: \today
+\end{center}
+
+\newpage
+\thispagestyle{empty}
+\mbox{}
+
+\newpage
+{\centering\section*{Abstract}}
+\setcounter{page}{1}
+\pagenumbering{roman}
+
+\newpage
+\thispagestyle{empty}
+\mbox{}
+\newpage
+
+{\centering\tableofcontents}
+\setcounter{page}{1}
+\pagenumbering{arabic}
+\newpage
 
 \section{Introduction}
 
@@ -31,13 +62,9 @@ The magnetization parameter is defined as:
 \sigma_o= \frac{\phi^2 \Omega^2}{\dot{M} c^3}
 \end{equation}
 
-Naively, we can think of this as a ratio of magnetic field energy density to mass energy density. As will be discussed in Section ~\ref{sec:prompt}, the magnetization parameter increases drastically on a timescale of 20-100s, during which the neutron star becomes optically thin to neutrinos and consequently $\dot{M}$ declines. This timescale constrains prompt emission duration since jets with high magnetization cannot effectively accelerate and dissipate their energy \cite{Metzger:2010pp}. The transparency timescale is tauntingly similar to the duration of typical LGRBs of $\sim 100$ seconds. Thus, we search for physical processes that may decrease the magnetization. Barring decreasing the magnetix flux or the angular frequency, which would also counterproductively decrease the spindown energy, or increasing the speed of light, which stubbornly chooses to remain constant,  we are left with increasing $\dot{M}$. Then, the pressing question is whether magnetization is affected only by mass loss or mass accretion as well. We ask:
+where $\phi$ is the magnetic flux, $\Omega$ is the angular frequency, and $\dot{M}$ is the mass loss (or possibly mass accretion) rate.
 
-\begin{itemize}
-\item Can fallback accretion increase $\dot{M}$ and hence lower magnetization to allow for longer prompt emission winds?
-\item Does the wind direction matter? Metzger 2010 \cite {Metzger:2010pp} solves for prompt emission energetics assuming neutrino-driven mass loss (an outflow). Can we similarly account for accreting mass from the supernova (an inflow) in calculationg the magnetization? If not:
-\item Following Piro and Ott 2011 \cite {Piro:2011ed}, there exist certain conditions under which fallback accretion is flung back out. In this propeller regime, we would have mass loss in that sense that mass is flowing outwards from the magnetar, addressing the previous issue. However, compared to Metzger 2010, where neutrino driven mass-loss happens at the surface of the magnetar, the propeller regime occurs at the Alfven radius of $\sim 14$ km (see Section \ref{sec:fallback}). Is this difference significant, given that the internal shock radius responsible for prompt emission is $\sim 10^{13}$ cm and thus much further than both the Alfven radius and the magnetar surface?
-\end{itemize}
+Naively, we can think of this as a ratio of magnetic field energy density to mass energy density. As will be discussed in Section ~\ref{sec:prompt}, the magnetization parameter increases drastically on a timescale of 20-100s, during which the neutron star becomes optically thin to neutrinos and consequently $\dot{M}$ declines. This timescale constrains prompt emission duration since jets with high magnetization cannot effectively accelerate and dissipate their energy \cite{Metzger:2010pp}. The transparency timescale is tauntingly similar to the duration of typical LGRBs of $\sim 100$ seconds. Thus, we search for physical processes that may decrease the magnetization. Barring decreasing the magnetix flux or the angular frequency, which would also counterproductively decrease the spindown energy, or increasing the speed of light, which stubbornly chooses to remain constant,  we are left with increasing $\dot{M}$. Then, the pressing question is whether magnetization is affected only by mass loss or mass accretion as well.
 
 \subsection{Magnetar Dipole Radiation} \label{sec:dipole}
 
@@ -123,10 +150,10 @@ Infalling material does not come under the influence of the magnetic field befor
 The mass accretion rate can be decomposed into early and late times:
 
 \begin{equation} \label{eq:early}
-\dot{M}_{early} = \eta 10^{-3}t^{1/2} M_{\odot} s^-1
+\dot{M}_{early} = \eta 10^{-3}t^{1/2} \, \mathrm{M_{\odot }s^{-1}}
 \end{equation}
 \begin{equation} \label{eq:late}
-\dot{M}_{late}=50 t^{-5/3}M_{\odot} s^{-1}
+\dot{M}_{late}=50 t^{-5/3}\, \mathrm{M_{\odot} s^{-1}}
 \end{equation}
 
 Following the convention in Piro and Ott 2011, we combine these expressions
@@ -136,6 +163,14 @@ Following the convention in Piro and Ott 2011, we combine these expressions
 which preserves the time domains of our decomposed accretion rate equations \ref{eq:early} and \ref{eq:late}.
 \section{Prompt Emission and Magnetic Dissipation} \label{sec:prompt}
 
+We ask:
+
+\begin{itemize}
+\item Can fallback accretion increase $\dot{M}$ and hence lower magnetization to allow for longer prompt emission winds?
+\item Does the wind direction matter? Metzger 2010 \cite {Metzger:2010pp} solves for prompt emission energetics assuming neutrino-driven mass loss (an outflow). Can we similarly account for accreting mass from the supernova (an inflow) in calculationg the magnetization? If not:
+\item Following Piro and Ott 2011 \cite {Piro:2011ed}, there exist certain conditions under which fallback accretion is flung back out. In this propeller regime, we would have mass loss in that sense that mass is flowing outwards from the magnetar, addressing the previous issue. However, compared to Metzger 2010, where neutrino driven mass-loss happens at the surface of the magnetar, the propeller regime occurs at the Alfven radius of $\sim 14$ km (see Section \ref{sec:fallback}). Is this difference significant, given that the internal shock radius responsible for prompt emission is $\sim 10^{13}$ cm and thus much further than both the Alfven radius and the magnetar surface?
+\end{itemize}
+
 \subsection{Magnetization and Longevity}
 
 \subsection{Thermalization: Dissipation vs Shocks}
@@ -143,16 +178,215 @@ which preserves the time domains of our decomposed accretion rate equations \ref
 \section{Afterglow and Plateau}
 
 \subsection{Lyons: Spindown Powered Plateau}
+We explore the argument in Lyons 2009 \cite{Lyons:2009ka} that plateau phases and spindown can be explained by the dipole radiation model of a magnetar.
+Following Piro Ott 2011\cite{Piro:2011ed} and neglecting spindown from fallback accretion, we have
+\begin{equation} I \dot{\Omega}=N_{\mathrm{dip}}, \end{equation}
+where $I= .35 M R^2$ and $N_{\mathrm{dip}}= -\mu ^2 \Omega^3/6c^3$.
+We solve for angular velocity as a function of time
+\begin{equation}\label{eq:freq}
+\Omega = \frac{\sqrt{\frac{21}{2}} c^{3/2} \sqrt{M} R}{\sqrt{10 t\mu^2 - 21 c^3 M R^2 y}},
+\end{equation}
+Together with ~\ref{eq:lumin}, we can solve for spindown radiation luminosity as a function of time, arriving at
+
+\begin{equation}
+L_{\mathrm{dip}}=\frac{147 B^2 c^3 M^2 R^{10}}{8(-21 c^3 M R^2 y+ 5/2 B^2 R^6 t)^2},
+\end{equation}
+
+where we have used $\mu= B R^3/2$, the magnetic moment for a uniformly magnetized sphere, and y is a negative value related to initial period $P_o$ by $P_o= 2\pi \sqrt{-2 y}$.
+
+\hspace{4cm}
+
+Note  the interesting result that luminosity may actually decrease with increasing magnetic field at a given time. A stronger field brakes the magnetar, decreasing its spin frequency as seen in \ref{eq:freq}. Since frequency comes in to the inverse 4th power, while the magnetic field comes in only to the 2nd power in ~\ref{eq:lumin}, luminosity may indeed decreases with higher magnetic field.
+
+We correct for anistropic emission using expression 5 of Lyons 2009 \cite{Lyons:2009ka}:
+
+
+\begin{equation}
+ E_{\mathrm{beam}}= (1-\cos{\theta_b}) E_{\mathrm{iso}},
+ \end{equation}
+ where $\theta_b$ is the beam's opening angle, and we assumed that this does not change with time. Thus the analogous correlation holds for luminosity.
 
 \subsubsection{Assumptions}
 
-\subsubsection{K-Correction}
+The assumption of $1.4 M_{\odot}$ for the magnetar mass seems troublesome since the noncanonical model demands magnetar collapse to a black hole to shut off the light curve, but $1.4 M_{\odot}$ is a lower limit on NS mass - we don't expect collapse to a BH. However, the requisite near breakup spin may prevent an intermediate magnetar from forming, allowing immediate NS collapse to BH. Could a similar breakup instability lead to BH collapse for these low mass NS?
+\hspace{2cm}
+
+We have used Ned Wright's Java Cosmology Calculator for Standard Cosmological Model to arrive at luminosity distances.
+
+The figures below are light curves using data from Swift for LGRB 101225A in the .3-10 keV bandpass.
+
+
+\subsubsection{K-correction}
+We  K-correct into the X-ray bandpass in the frame of the magnetar as follows. 
+\textit{(include note on comoving vs luminosity distance)}. The spectral indices $\Gamma$
+are available from SWIFT. The spectral index $\beta$ \textit{(define eqn)} is simply $\Gamma -1$ and the K-corrected luminosity is then:
+
+\begin{equation} L_{[.3-10 keV]} = 4\pi\* f_{[.3-10 keV]}d_{L}^2  (1+z)^{-1+\beta}
+\end{equation}
+
+where we use 0.3-10keV as the X-ray bandpass.  $L_{[.3-10 keV]}$ is the luminosity in this bandpass calculated from the Swift flux data,  $f_{[.3-10 keV]}$. z is the LGRB redshift and $d_L$ the luminosity distance of the LGRB.
 
 \subsection{Centrifugal Support and Black Hole Formation}
 
-\section{Conclusions}
+\subsection{Possible Scenarios Involving a Magnetar as GRB Central Engine}
 
+\begin{itemize}
+\item We can have a plateau and apparent cutoff explained entirely by the magnetar dipole curvature. For instance, see Fig  ~\ref{fig:4}. \newline
+
+\item We can have accretion induced collapse to a blackhole for a variety of magnetar initial masses, from $1.5-2.4\, M_{\odot}$ and a variety of accretion parameters $.1-10$. \newline
+
+\item We can have spindown collapse, where centrifugal support is no longer able to sustain the magnetar even in the case of no accretion. \newline 
+
+We may initially have a hypermassive, $>2.5 M_{\odot}$,  differentially rotating magnetar. However, bar mode, magnetic, and other instabilities will redistribute angular momentum to make the magnetar rigidly rotating within the first second. Thus the above collapse arguments still apply (citation needed). \newline
+
+\item We may also  have no collapse and see an indefinite plateau, or immediate collapse and thus no plateau \textit{(find examples)}.
+
+\end{itemize}
+\subsection{Fits}
+
+We explore the possibity of a magnetar braking until rotational support is insufficent to prevent gravitational collapse.
+
+As an order of magnitude estimate (\textit{why not explore rot. energy vs grav energy}) we plot in Fig. ~\ref{fig:2} the ratio of the centrifugal force over the gravitational force as a function of magnetar period. Though the radius may evolve during the first few seconds (see Metzger 2010 \cite{Metzger:2010pp}, it is reasonable to assume that the radius remains constant during the afterglow phase.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[height=0.3\textheight]{centrif}
+\caption{}
+\label{fig:2}
+\end{figure}
+
+Note how, by a period of a few milliseconds the centrifugal support has become orders less. For context, in Fig. ~\ref{fig:3} we plot period evolution of magnetars again neglecting fallback and assuming only dipole evolution.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[height=0.3\textheight]{pds}
+\caption{}
+\label{fig:3}
+\end{figure}
+
+We assume 3.0 solar masses (\textit{cite}) as an upper limit to our magnetar before collapse to a black hole. In Fig. ~\ref{fig:4}, we plot two GRBs against the dipole model for the afterglow phase for a variety of parameters. All assume initial period of 1 ms and radius of 12km. Following Lyons, we use small beaming angles of 1$^{\circ}$ and 4$^{\circ}$. The last two plots are fit explicitly rather than constrained by an array of parameters.
+
+Next we consider fallback accretion. In Fig. ~\ref{fig:5} below, we use the notation rXmYbZ where rX is the radius of X km, mY is the mass of Y solar masses and bZ is a magnetic field of $10^b$ Gauss. $\eta$ is our accretion parameter described above associate with the supernova strength. A larger $\eta$ means a stronger supernova and thus less fallback.
+\begin{figure}[h!]
+\centering
+\begin{subfigure}{.5\textwidth}
+    \centering
+    \includegraphics[width=1.0\linewidth]{r12m15b15}
+    \caption{}
+    \label{}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+    \centering
+    \includegraphics[width=1.0\linewidth]{r12m25b15}
+    \caption{}
+    \label{}
+\end{subfigure}
+\begin{subfigure}{.5\textwidth}
+    \centering
+    \includegraphics[width=1.0\linewidth]{r10m2b14}
+    \caption{}
+    \label{}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+    \centering
+    \includegraphics[width=1.0\linewidth]{r10m25b16}
+    \caption{}
+    \label{}
+\end{subfigure}
+\caption{}
+\label{fig:5}
+\end{figure}
+
+In Figures 3a and 3b, we see that if the magnetar can survive against gravitational collapse for the first 10 seconds, it will power an afterglow lasting up to a 1000 seconds. In Figure 3c, we see the magnetar becomes rotationally unstable around several hundred seconds. In Figure 3d, the magnetar can likely power a plateau of greater than 1000 seconds. The fastness parameter plotted is $(r_m/r_c)^(3/2)$ and determines whether the magnetar is in the propeller regime (where the fastness parameter is greater than 1).
+\newpage
+
+\begin{figure}[h!]
+\centering
+\begin{subfigure}{.4\textwidth}
+    \centering
+    \includegraphics[width=1.0\linewidth]{100424A}
+    \caption{An example of the dipole model alone accounting for both the plateau and decay curvature without the need for a black hole.}
+    \label{}
+\end{subfigure}%
+\begin{subfigure}{.4\textwidth}
+    \centering
+    \includegraphics[width=1.0\linewidth]{100316D}
+    \caption{Note that due to the limited data, we cannot extrapolate a beaming angle from the fit.}
+    \label{}
+\end{subfigure}
+\begin{subfigure}{.4\textwidth}
+    \centering
+    \includegraphics[width=1.0\linewidth]{101225A}
+    \caption{Late time afterglow activity}
+    \label{}
+\end{subfigure}%
+\begin{subfigure}{.4\textwidth}
+    \centering
+    \includegraphics[width=1.0\linewidth]{060607}
+    \caption{Another example of the dipole model fitting the plateau and decay curvature. The two early peaks are likely flares.}
+    \label{}
+\end{subfigure}
+\begin{subfigure}{.5\textwidth}
+    \centering
+    \includegraphics[width=1.0\linewidth]{060510bfit}
+    \caption{Possible evidence of early decay to a black hole due to the sharp light curve cut-off at 200s with a drop of roughly 2 orders.}
+    \label{}
+\end{subfigure}
+\caption{}
+\label{fig:4}
+\end{figure}
+
+\newpage
+At this point we reconsider our assumptions to see if they are self-consistent. We first assume fallback accretion with sufficient material and the absence of apropeller regime. Adjacent to this we plot mass accretion and the fastness parameter for a magnetar with a particularly high 5ms initial period, initial mass of 2 $M_{\odot}$ and a field of $10^{15}$ G. Interestingly, if we decrease the period to 1ms, the magnetar is always (at least until $10^7$ seconds) in the propeller regime and does not accrete. Thus, fallback accretion may play a significant role in certain magnetars.
+
+\begin{figure}[h!]
+\centering
+\begin{subfigure}{.5\textwidth}
+    \centering
+    \includegraphics[width=1.0\linewidth]{timeaccret}
+    \caption{}
+    \label{}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+    \centering
+    \includegraphics[width=1.0\linewidth]{massaccret}
+    \caption{}
+    \label{}
+\end{subfigure}
+\caption{}
+\label{fig:6}
+\end{figure}
+
+Additionally, we plot in Fig. ~\ref{fig:6} the ratio of centrifugal to gravitational forces as a function of time and period to determine stability against gravitational collapse.
+
+\begin{figure}[h!]
+\centering
+\begin{subfigure}{.5\textwidth}
+    \centering
+    \includegraphics[width=1.0\linewidth]{centrifaccret1}
+    \caption{}
+    \label{}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+    \centering
+    \includegraphics[width=1.0\linewidth]{centrifaccret2}
+    \caption{}
+    \label{}
+\end{subfigure}
+\caption{}
+\label{fig:7}
+\end{figure}
+
+Furthermore, as evident in Fig. \ref{fig:6}, period evolution may be deceptive. Though the magnetar seems rotationally stable against collapse at 1000 seconds, it has by then accreted over 2 solar masses and thus very likely collapsed even given its rotation (\textit{cite}).
+
+\section{Conclusion}
+
+\newpage
+
+\renewcommand*{\refname}{}
+\section{References}
 \bibliographystyle{unsrt}
 \bibliography{thesisoutline}
 
 \end{document}
+
