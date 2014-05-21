@@ -19,17 +19,20 @@
 \Huge
 Title\\
 \LARGE
-\vspace{3 cm}
+\vspace{2 cm}
+David Vartanyan\\
+\vspace{2cm}
+
 Senior Thesis\\
 Astrophysics Program\\
 California Institute of Technology\\
-David Vartanyan\\
+
 \vspace{5 cm}
 \large
 Advisor: Christian Ott\\
 Date: \today
 \end{center}
-\centerline{\includegraphics[width=40mm]{images.jpeg}}
+\centerline{\includegraphics[width=40mm]{caltech-logo.pdf}}
 
 \newpage
 \thispagestyle{empty}
@@ -198,10 +201,19 @@ Prompt emission also determines the period at the beginning of the afterglow pha
 
 In Fig.~\ref{fig:7}, we plot the the period as a function of time following different expressions for energy loss. We consider the both the upper and lower limits of $\dot{E}$ in Fig.~2 in Metzger et al. 2010 \cite{Metzger:2010pp}, where $\dot{E}$ is the wind power at large radii, consisting of both magnetic and kinetic energy. For comparison, we also plot what the period would be if dipole radiation were the only source of spindown.
 
+\begin{equation}
+\dot{E} =\dot{E}_\mathrm{kin}+\dot{E}_\mathrm{mag} \approx
+\begin{cases}
+\dot{M} c^2 \sigma^{2/3}& \text{if}\, \sigma<<1 \\
+(2/3) \dot{M} c^2 \sigma & \text{if}\, \sigma>>1.
+\end{cases}
+\end{equation}
+
 \begin{figure}[h!]
 \centering
 \includegraphics[height=0.3\textheight]{promptpd1.pdf}
 \caption{In the extreme case, assuming the upper limit in Fig. 2 in Metzger et al. 2010 of$\dot{E}=10^{51}$ erg $\mathrm{s}^{-1}$, the period decreases to 0.3 ms. For both the lower limits and dipole radiation alone, the period dcay is negligible.}
+
 \label{fig:7}
 \end{figure}
 
@@ -228,7 +240,7 @@ which is accurate for an ultrarelativistic jet with Lorentz factor $\Gamma_j$ co
 
 \section{Afterglow and Plateau}
 
-\subsection{Lyons: Spindown Powered Plateau}
+\subsection{Lyons et al. 2009: Spindown Powered Plateau}
 We explore the argument in Lyons et al. 2009 \cite{Lyons:2009ka} that plateau features lasting $100\,\mathrm{s}$ to $1000\,\mathrm{s}$ of seconds in LGRB afterglows can be explained by the dipole radiation model of a magnetar.
 As a first order estimate, we trace the steps in Lyons et al. and neglect fallback accretion. Following Piro Ott 2011 \cite{Piro:2011ed} and neglecting spindown from fallback accretion, we have
 \begin{equation} I \dot{\Omega}=N_{\mathrm{dip}}\,, \end{equation}
@@ -318,7 +330,7 @@ Note how, by a period of a few milliseconds the centrifugal support has become o
 \label{fig:2}
 \end{figure}
 
-We assume 3.0 solar masses \cite{Kaplan:2013wra} as an upper limit to our magnetar before collapse to a black hole. In Fig.~\ref{fig:3}, we plot several GRBs against the dipole model for the afterglow phase for a variety of parameters. All assume initial period of 1 ms at the beginning of prompt emission and a radius of 12km. Following Lyons et al., we use beaming angles between $1^{\circ}$ and a few tens of degrees \cite{Lyons:2009ka} (\textit{include addl citations re angles}.  The last two plots are fit explicitly rather than constrained by an array of parameters.
+We assume 3.0 solar masses \cite{Kaplan:2013wra} as an upper limit to our magnetar before collapse to a black hole. In Fig.~\ref{fig:3}, we plot several GRBs against the dipole model for the afterglow phase for a variety of parameters. All assume initial period of 1 ms at the beginning of prompt emission and a radius of 12km. Following Lyons et al., we use beaming angles between $1^{\circ}$ and a few tens of degrees \cite{Lyons:2009ka} (\textit{include addl citations re angles}).  The last two plots are fit explicitly rather than constrained by an array of parameters.
 
 Next we consider fallback accretion. In Fig.~\ref{fig:4} below, we use the notation rXmYbZ where X is the radius in km, Y is the mass in solar masses and Z indicates the dipole magnetic field in $10^Z$ Gauss. $\eta$ is our accretion parameter described above associate with the supernova strength. A smaller $\eta$ means a stronger supernova and thus less fallback.
 \begin{figure}[h!]
@@ -337,7 +349,7 @@ Next we consider fallback accretion. In Fig.~\ref{fig:4} below, we use the notat
 \end{subfigure}
 \begin{subfigure}{.5\textwidth}
     \centering
-    \includegraphics[width=1.0\linewidth]{r10m2b14}
+    \includegraphics[width=1.0\linewidth]{r10m25b14}
     \caption{}
     \label{fig:4c}
 \end{subfigure}%
@@ -351,7 +363,7 @@ Next we consider fallback accretion. In Fig.~\ref{fig:4} below, we use the notat
 \label{fig:4}
 \end{figure}
 
-In Figures 3a and 3b, we see that if the magnetar can survive against gravitational collapse for the first 10 seconds, it will power an afterglow lasting up to a 1000 seconds. In Figure 3c, we see the magnetar becomes rotationally unstable around several hundred seconds. In Figure 3d, the magnetar can likely power a plateau of duration greater than 1000 seconds. The fastness parameter plotted is $(r_m/r_c)^(3/2)$ and determines whether the magnetar is in the propeller regime (where the fastness parameter is greater than 1).
+In Fig.~\ref{fig:3a}, we see that if the magnetar can survive against gravitational collapse for the first 10 seconds, it will power an afterglow lasting up to a 1000 seconds. In Fig.~\ref{fig:3b}, the magnetar spins down significantly between 100 and 1000 seconds, but accretes no mass. In Fig.~\ref{fig:3c}, we see the magnetar may become rotationally unstable around several hundred seconds. In Fig.~\ref{fig:3d}, the magnetar both spins down significantly and accretes significantly. The fastness parameter plotted is $(r_m/r_c)^(3/2)$ and determines whether the magnetar is in the propeller regime (where the fastness parameter is greater than 1).
 \newpage
 
 \begin{figure}[h!]
